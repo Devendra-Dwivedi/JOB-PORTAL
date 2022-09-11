@@ -1,0 +1,377 @@
+<html>
+    <head>
+        <title>registration</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+            <link rel="stylesheet" type-"'text/css" href="style.css"/>
+            <SCRIPT language="javascript">
+                function validateForm(){
+                    var x=document.forms["Registrationform"]["LoginID"].value
+                    if (x==null || x=="")
+                    {
+                        alert("Please Enter Your Login ID");
+                        return false;
+                    }
+                    var x=document.forms["Registrationform"]["FirstName"].value
+                    if (x==null || x=="")
+                    {
+                        alert("Please Enter Your First Name");
+                        return false;
+                    }    
+                    var x=document.forms["Registrationform"]["LastName"].value
+                    if (x==null || x=="")
+                    {
+                        alert("Please Enter Your Last Name");
+                        return false;
+
+                    }
+                    var e=document.forms["Registrationform"]["Email"].value
+                    var atpos=e.indexOf("@");
+                    var dotpos=e.lastIndexOf(".");
+                    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=e.length)
+                    {
+                        alert("Not a valid e-mail address");
+                        return false;
+                    }
+                    var x=document.forms["Registrationform"]["Password"].value
+                    var y=document.forms["Registrationform"]["ConfirmPass"].value
+                    if ((x==null || x=="") || (y==null || y==""))
+                    {
+                        alert("Please Enter Your Password & Confirm Password");
+                        return false;
+                    }
+                    if (x!=y)
+                    {
+                        alert ("Password and Confirm Password did not Match");
+                        return false;
+                    }
+                    var d=document.forms["Registrationform"]["Day"].value
+                    var m=document.forms["Registrationform"]["Month"].value
+                    var y=document.forms["Registrationform"]["Year"].value
+                    if ((d=="Day") || (m=="Month") || (y=="Year"))
+                    {
+                        alert("Please Select Your Birth Date");
+                        return false;
+                    }
+                    var x=document.forms["Registrationform"]["City"].value
+                    if (x=="Select")
+                    {
+                        alert("Please Select Your Current Location");
+                        return false;
+                    }
+                    var x=document.forms["Registrationform"]["'Nationality"].value
+                    if (x=="Select a Country")
+                    {
+                        alert("Please Select Your Country");
+                        return false;
+                    }
+                    var x=document.forms["Registrationform"]["Phone"].value
+                    if ((x==null || x=="") || (x.length != 10) || (isNaN(x) || x.indexOf(" ") == 1))
+                    {
+                        alert("Please Enter Your Valid Mobile Number");
+                        return false;
+                    }
+                }
+                function getURLParam(strParamName){
+                    var strReturn = "";
+                    var strHref = window.location.href;
+                    if (strHref.indexOf("?") >-1){
+                        var strQueryString = strHref.substr(strHref.indexOf("?")). toLowerCase();
+                        var aQueryString= strQueryString.split("&");
+                        for (var iParam = 0; iParam < aQueryString.length; iParam++){
+                            if(aQueryString[iParam].indexOf(strParamName.toLowerCase() + "=") > -1)
+                            {
+                                var aParam = aQueryString[iParam].split("=");
+                                strReturn = aParam[1];
+                                break;
+                            }
+                        }
+                    }
+
+                    return unescape(strReturn);
+                }
+            </SCRIPT>
+    </head>
+    <body onLoad="document.forms.Registrationform.Email.value=getURLParam('myemail')">
+        <div class="meta">
+            <div class="metalinks">
+                <a href="index.html"><img src="" title="Home" width="20%" height="30"/></a>
+                <a href="search.html"><img src="" title="Search" width="25%" height="30"/></a>
+                <a href="sitemap.html"><img src="" title="Sitemap" width="27%" height="30"/></a>
+                <a href="contact.html"><img src="" title="Contact" width="25%" height="30"/></a>
+            </div>
+            <p>
+                Recruiters: <a href="reclogin.asp">Recruiters Login</a>
+            </p>
+            <div class="inner_copy">
+                <a href="http://www.greatdirectories.org/">Web Directories</a>
+                <a href="http://www.bestfreetemplates.info/">Free CSS Templates</a>             
+            </div>
+        </div>
+        <div id="header">
+            <a href="index.html" class="logo">
+                <img src="" alt="setalpm" width="149" height="28"/>
+            </a>
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobseekerlogin.asp">jobseeker Login</a></li>
+                <li><a href="career.html">Our Career</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li class="last"><a href="registration.htm"><font color="red">Register</font></a></li>
+            </ul>
+            <img src="C:\Users\devdw\Documents\Project\brgame_screenshot (3).jpg" alt="" width="100%" height="600"/>
+        </div>
+        <div id="reg">
+            <hr>
+            <h3 align="center"><u><font face="Times New Roman" size="6">Registration</font></u></h3>
+            <p>&nbsp;</p>
+            <hr>
+            <form name="Registrationform" onsubmit="return validateForm()" method="POST" action="information.html">
+                <TABLE width="80%" align=center> 
+                    <TBODY>
+                        <TR vAlign=top>
+                            <TD>* Login ID</TD>
+                            <TD><input type="text" name="LoginlD" id="LoginID" size="30" maxlength="50"></TD>
+                            <TD></TD>
+                        </TR>
+                        <TR vAlign=top>
+                            <TD>* First Name</TD>
+                            <TD><INPUT id="FirstName" maxLength=100 size=30 name="FirstName"></TD>
+                            <TD>&nbsp;</TD>
+                        </TR>
+                        <TR vAlign=top>
+                            <TD>* Last Name</TD>
+                            <TD><INPUT id=LastName maxLength=100 size=30 name=LastName></TD>
+                            <TD>&nbsp;</TD>
+                        </TR>
+                        <TR vAlign=top>
+                            <TD width="28%">* Email Address:</TD>
+                            <TD width="35%"><INPUT id=Email maxLength=100 size=30 name=Email value=""> </TD>
+                            <TD width="37%">
+                            <DIV id=status></DIV></TD>
+                        </TR>
+                        <TR>
+                            <TD>* Password:</TD>
+                            <TD colSpan=2><INPUT type=password maxLength=30 onchange="javascript:while(''+this.value.charAt(0)=='')this.value=this.value.substring(1,this.value.length);" size=30 name=Password id=Password></TD>
+                        </TR>
+                        <TR>
+                            <TD>* Confirm Password:</TD>
+                            <TD colSpan=2><INPUT type=password size=30 name=ConfirmPass></TD>
+                        </TR>
+                    </TBODY>
+                </TABLE>
+                <table>
+                    <tr>
+                        <TD>
+                            <HR width="100%">
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD><STRONG>Contact Details </STRONG></TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                        <TABLE id="location" width="492" align=center>
+                            <TBODY>
+                                <TR>
+                                    <TR>
+                                        <TD width="201">&nbsp;* Functional Area:</TD>
+                                        <TD width="489">
+                                            <SELECT name=FArea>
+                                                <OPTION value="" selected>Select Functional Area</OPTION>
+                                                <OPTION value="">Select</OPTION>
+                                                <OPTION label="Accounts/Finance/Tax/CS/Audit" value="Accounts/Finance/Tax/CS/Audit">Accounts/Finance/Tax/CS/Audit</OPTION>
+                                                <OPTION label="Architecture/Interior Design" value="Architecture/Interior Design">Architecture/Interior Design</OPTION> 
+                                                <OPTION label="Web/Graphic Design/Visualiser" value="Web/Graphic Design/Visualiser">Web/Graphic Design/Visualiser</OPTION>
+                                                <OPTION label="Hotels/Restaurants" value="Hotels/Restaurants">Hotels/Restaurants</OPTION>
+                                                <OPTION label="Content/Journalism" value="Content/Journalism">Content/Journalism</OPTION>
+                                                <OPTION label="Banking/Insurance" value="Banking/Insurance">Banking/Insurance</OPTION>
+                                                <OPTION label="Corporate Planning/Consulting" value="Corporate Planning/Consulting">Corporate Planning/Consulting</OPTION>
+                                                <OPTION label="ITES/BPO/KPO/Customer Service/Operations" value="ITES/BPO/KPO/Customer Service/Operations">ITES/BPO/KPO/Customer Service/Operations</OPTION>
+                                                <OPTION label="Self Employed/Consultants" value="Self Employed/Consultants">Self Employed/Consultants</OPTION>
+                                                <OPTION label="Export/Import/ Merchandising" value="Export/Import/Merchandising">Export/Import/Merchandising</OPTION>
+                                                <OPTION label="Secretary/Front Office/Data Entry" value="Secretary/Front Office/Data Entry">Secretary/Front Office/Data Entry</OPTION>
+                                                <OPTION label="HR/Administration/IR" value="HR/Administration/IR">HR/Administration/IR</OPTION>
+                                                <OPTION label=Legal value=Legal>Legal</OPTION>
+                                                <OPTION label="Purchase/Logistics/SupplyChain" value= "Purchase/Logistics/Supply Chain">Purchase/Logistics/Supply Chain</OPTION>
+                                                <OPTION label= "Marketing/Advertising/MR/PR" value= "Marketing/Advertising/MR/PR">Marketing/Advertising/MR/PR</OPTION>
+                                                <OPTION label="Pharma/Biotech/Healthcare/Medical/R&amp;D" value="Pharma/Biotech/Healthcare/Medical/R&amp;D">Pharma/Biotech/Healthcare/Medical/R&amp;D</OPTION>
+                                                <OPTION label="Packaging" value=Packaging>Packaging</OPTION>
+                                                <OPTION label="Production/Maintenance/Quality" value="Production/Maintenance/Quality">Production/Maintenance/Quality</OPTION>
+                                                <OPTION label="Site Engineering/Project Management" value="Site Engineering/Project Management">Site Engineering/Project Management</OPTION>
+                                                <OPTION label="Engineering Design/R&amp;D" value="Engineering Design/R&amp;D">Engineering Design/R&amp;D</OPTION>
+                                                <OPTION label="Sales/BD" value="Sales/BD">Sales/BD</OPTION>
+                                                <OPTION label="Teaching/Education" value="Teaching/Education">Teaching/Education</OPTION>
+                                                <OPTION label="IT-Hardware/Telecom/Technical Staff/Support" value="IT-Hardware/Telecom/Technical Staff/Support">IT-Hardware/Telecom/Technical Staff/Support</OPTION>
+                                                <OPTION label="Top Management" value="Top Management">Top Management</OPTION>
+                                                <OPTION label=Other value=Other>Other</OPTION>
+                                                <OPTION label="Fashion/Garments/Merchandising" value="Fashion/Garments/Merchandising">Fashion Garments/Merchandising</OPTION>
+                                                <OPTION label="TV/Films/Production" value="TV/Films/Production">TV/Films/Production</OPTION>
+                                                <OPTION label="Ticketing/Travel/Airlines" value="Ticketing/Travel/Airlines">Ticketing/Travel/Airlines</OPTION>
+                                                <OPTION label="Guards/Security Services" value="Guards/Security Services">Guards/Security Services</OPTION>
+                                                <OPTION label=Agent value=Agent>Agent</OPTION>
+                                                <OPTION label="IT Software-Application Programming/Maintenance" value="IT Software- Application Programming/Maintenance">IT Software- Application Programming/Maintenance</OPTION>
+                                                <OPTION label="IT Software-Client Server" value="IT Software-Client Server">IT Software-Client Server</OPTION>
+                                                <OPTION label="IT Software-DBA/Datawarehousing" value="TT Software-DBA/Datawarehousing">IT Software-DBA/Datawarehousing</OPTION>
+                                                <OPTION label="IT Software-ERP/CRM" value="IT Software-ERP/CRM">IT Software-ERP/CRM</OPTION>
+                                                <OPTION label="IT Software-Embedded/EDA/VLSI/ASIC/Chip Des." value="IT Software-Embedded/EDA/VLSI/ASIC/Chip Des.">IT Software-Embedded/EDA/VLSI/ASIC/Chip Des.</OPTION>
+                                                <OPTION label="IT Software-Network Administration/Security" value="IT Software-Network Administration/Security">IT Software-Network Administration/Security</OPTION>
+                                                <OPTION label="IT Software-QA &amp; Testing" value="IT Software- QA &amp; Testing">IT Software-QA &amp; Testing</OPTION>
+                                                <OPTION label="IT Software-System Programming" value="IT Software-System Programming">IT Software-System Programming</OPTION>
+                                                <OPTION label="IT Software-Telecom Software" value="IT Software-Telecom Software">IT Software-Telecom Software</OPTION>
+                                                <OPTION label="IT Software-Systems/EDP/MIS" value="IT Software-Systems/EDP/MIS">IT Software-Systems/EDP/MIS</OPTION>
+                                                <OPTION label="IT Software-E-Commerce/Internet Technologies" value="IT Software-E-Commerce/Internet Technologies">IT Software-E-Commerce/Internet Technologies</OPTION>
+                                                <OPTION label="IT Software Mainframe" value="IT Software Mainframe">IT Software Mainframe</OPTION>
+                                                <OPTION label="IT Software - Mobile" value="IT Software - Mobile">IT Software - Mobile</OPTION>
+                                                <OPTION label="IT Software - Middleware" value="IT Software - Middleware">IT Software - Middleware</OPTION>
+                                                <OPTION label="IT Software - Other" value= "IT Software - Other">IT Software - Other</OPTION>
+                                            </SELECT>
+                                        </TD>
+                                    </TR>
+                                    <TR>
+                                        <TD width="201">&nbsp;* Current Industry:</TD>
+                                        <TD width="489"><INPUT maxLength=30 name=Curlndustry size="49"></TD>
+                                    </TR>
+                                    <TR>
+                                        <TD width="201">&nbsp;* Role:</TD>
+                                        <TD width="489"><INPUT maxLength=30 name=Role size="49"></TD>
+                                    </TR>
+                                    <TR>
+                                        <TD width="201">&nbsp;* Key Skills:</TD>
+                                        <TD width="489">
+                                            <TEXTAREA name=KeySkills cols=41 onchange=trim(); rows="1"></TEXTAREA>
+                                        </TD>
+                                    </TR>
+                                    <TR>
+                                        <TD width="201">&nbsp;* Resume Headline:</TD>
+                                        <TD width="489"><INPUT maxLength=225 onchange=trim1(); size=53 name=RHeadline></TD>
+                                    </TR>
+                            </TBODY>
+                        </TABLE>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                            <HR width="100%">
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD><STRONG>Education Details </STRONG></TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                            <TABLE width="80%" align=center>
+                                <TBODY>
+                                    <TR id=hideeducation1 style="DISPLAY: block">
+                                        <TD width="100%">
+                                            <TABLE width="555" align=center>
+                                                <TBODY>
+                                                    <TR>
+                                                        <TD width="198">&nbsp;* Basic/Graduation:</TD>
+                                                        <TD width="343">
+                                                            <SELECT onchange=hideEducation(this); name=Graduation>
+                                                                <OPTION value="" selected>Select Graduation</OPTION>
+                                                                <OPTION value="Not Pursuing Graduation">Not Pursuing Graduation</OPTION>
+                                                                <OPTION value=B.A>B.A</OPTION>
+                                                                <OPTION value=B.Arch>B.Arch</OPTION>
+                                                                <OPTION value=BCA>BCA</OPTION>
+                                                                <OPTION value=B.B.A>B.B.A</OPTION>
+                                                                <OPTION value=B.Com>B.Com</OPTION>
+                                                                <OPTION value=B.Ed>B.Ed</OPTION>
+                                                                <OPTION value=BDS>BDS</OPTION>
+                                                                <OPTION value=BHM>BHM</OPTION>
+                                                                <OPTION value=B.Pharma>B.Pharma</OPTION>
+                                                                <OPTION value=B.Sc>B.Sc</OPTION>
+                                                                <OPTION value=B.Tech/B.E.>B.Tech/B.E.</OPTION>
+                                                                <OPTION value=LLB>LLB</OPTION>
+                                                                <OPTION value=MBBS>MBBS</OPTION>
+                                                                <OPTION value=Diploma>Diploma</OPTION>
+                                                                <OPTION value=BVSC>BVSC</OPTION>
+                                                                <OPTION value=null>Other</OPTION>
+                                                            </SELECT>
+                                                        </TD>
+                                                    </TR>
+                                                    <TR id=other5 style="DISPLAY: none">
+                                                        <TD width="198"></TD>
+                                                        <TD width="343"><INPUT maxLength=30 name=othergraduation2 size="23"></TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD width="198">&nbsp;&nbsp;&nbsp;Post Graduation:</TD>
+                                                        <TD width="343">
+                                                            <SELECT onchange=showHidePgraduation(this); name=PG>
+                                                                <OPTION value="" selected>Select Post Graduation</OPTION>
+                                                                <OPTION value=CA>CA</OPTION>
+                                                                <OPTION value=CS>CS</OPTION>
+                                                                <OPTION value=ICWA>ICWA</OPTION>
+                                                                <OPTION value="Integrated PG">Integrated PG</OPTION>
+                                                                <OPTION value=LLM>LLM</OPTION>
+                                                                <OPTION value=M.A>M.A</OPTION>
+                                                                <OPTION value=M.Arch>M.Arch</OPTION>
+                                                                <OPTION value=M.Com>M.Com</OPTION>
+                                                                <OPTION value=M.Ed>M.Ed</OPTION>
+                                                                <OPTION value=M.Pharma>M.Pharma</OPTION>
+                                                                <OPTION value=M.Sc>M.Sc</OPTION>
+                                                                <OPTION value=M.Tech>M.Tech</OPTION>
+                                                                <OPTION value=MBA/PGDM>MBA/PGDM</OPTION>
+                                                                <OPTION value=MCA>MCA</OPTION>
+                                                                <OPTION value=MS>MS</OPTION>
+                                                                <OPTION value="PG Diploma">PG Diploma</OPTION>
+                                                                <OPTION value=MVSC>MVSC</OPTION>
+                                                                <OPTION value=MCM>MCM</OPTION>
+                                                                <OPTION value=null>Other</OPTION>
+                                                            </SELECT>
+                                                        </TD>
+                                                    </TR>
+                                                    <TR id=other2 style="DISPLAY: none">
+                                                        <TD width="198"></TD>
+                                                        <TD width="343">
+                                                            <INPUT maxLength=30 name=otherpgraduation size="23">
+                                                        </TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD width="198">&nbsp;&nbsp;&nbsp; Doctorate/Phd:</TD>
+                                                        <TD width="343">
+                                                            <SELECT onchange=showHideDrPhd(this); name=Doc>
+                                                                <OPTION value="" selected>Select Ph.D/Doctorate</OPTION>
+                                                                <OPTION value=Ph.D/Doctorate>Ph.D/Doctorate</OPTION>
+                                                                <OPTION value=MPHIL>MPHIL</OPTION>
+                                                                <OPTION value=null>Other</OPTION>
+                                                            </SELECT>
+                                                        </TD>
+                                                    </TR>
+                                                    <TR style="DISPLAY: none">
+                                                        <TD width="198"></TD>
+                                                        <TD width="343">
+                                                            <INPUT maxLength=30 name=otherdrorphd size="23">
+                                                        </TD>
+                                                    </TR>
+                                                    <TR>
+                                                        <TD width="198">&nbsp;&nbsp;&nbsp; Certification Course</TD>
+                                                        <TD width="343"><INPUT id=food name=CertCourse[] size="23"></TD>
+                                                    </TR>
+                                                </TBODY>
+                                            </TABLE>
+                                        </TD>
+                                    </TR>
+                                </TBODY>
+                            </TABLE>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD>
+                            <HR width="100%">
+                        </TD>
+                    </tr>
+                    <tr>
+                        <TD align=middle height=38>
+                            <INPUT class=sub_but_big1 type=submit value="Create Account &amp; Continue" name=submit>
+                        </TD>
+                    </tr>
+                    <tr>
+                        <td width="50%">&nbsp;</td>
+                        <td width="50%">&nbsp;</td>
+                    </tr>
+            </form>
+    </body>
+</html>

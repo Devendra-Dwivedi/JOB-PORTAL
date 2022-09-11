@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Job Portal
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset= iso-8859-1">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript">
+            function nextpage(){
+                var e=document.forms["myForm"]["MyValue"].value
+                var atpos=e.indexOf("@");
+                var dotpos=e.lastIndexOf(".");
+                if(atpos<1 || dotpos<atpos+2 || dotpos+2>=e.length)
+                    {
+                        alert("Not a valid e-mail address");
+                        return false;
+                    }
+                window.location.href="registration.htm?myemail="+document.forms.myForm.MyValue.value;
+            }
+            function ClearText(){
+                document.forms["myForm"]["MyValue"].value
+                document.forms.myForm.MyValue.value="";
+            }
+            function ClearText2(){
+                document.forms["SearchJ"]["JType"].value
+                document.forms.SearchJ.JType.value="";
+            }
+            function ClearText3(){
+                document.forms["SearchJ"]["JLocation"].value
+                document.forms.SearchJ.JLocation.value="";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="meta">
+            <div class="metalinks">
+                <a href="index.html"><img src="" title="Home" width="20%" height="30"/></a>
+                <a href="search.html"><img src="" title="Search" width="25%" height="30"/></a>
+                <a href="sitemap.html"><img src="" title="Sitemap" width="27%" height="30"/></a>
+                <a href="contact.html"><img src="" title="Contact" width="25%" height="30"/></a>
+            </div>
+            <p>
+                Recruiters: <a href="reclogin.asp">Recruiters Login</a>
+            </p>
+            <div class="inner_copy">
+                <a href="http://www.greatdirectories.org/">Web Directories</a>
+                <a href="http://www.bestfreetemplates.info/">Free CSS Templates</a>             
+            </div>
+        </div>
+        <div id="header">
+            <a href="index.html" class="logo">
+                <img src="" alt="setalpm" width="149" height="28"/>
+            </a>
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobseekerlogin.asp">jobseeker Login</a></li>
+                <li><a href="career.html">Our Career</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li class="last"><a href="registration.htm"><font color="red">Register</font></a></li>
+            </ul>
+            <img src="C:\Users\devdw\Documents\Project\brgame_screenshot (3).jpg" alt="" width="100%" height="600"/>
+        </div>
+        <div id="content">
+            <div class="search">
+                <form Name="SearchJ" action="SearchJobs.asp" method="post">
+                    <img src="" alt="Search" width="90" height="30" />&nbsp;
+                    <input type="text" class="first input" onclick="ClearText2()" value="Enter keywords(IT,HR....)" ID="JType" name="JType"/>
+                    <input type="text" class="second input" onclick="ClearText3()" value="Enter Locations(City Name)" ID="JLocation" name="JLocation"/>
+                    <input type="submit" value="Search" name="Submit"/>
+                    <div class="line">&nbsp;</div>
+                </form>
+            </div>
+            <div id="blocks">
+                <div class="inner_copy">
+                    <a href="http://www.bestfreetemplates.org/">Free Templates</a>
+                    <a href="http://www.bannermoz.com/">Banner Templates</a>
+                </div>
+                <div class="block">
+                    <img src="" alt="" width="214" height="29" /><br/>
+                    <img src="" alt="" width="214" height="160" /><br/>
+                    <a href="https://www.allworldjobs.com/" class="more">
+                        <img src="" alt="" width="105" height="27" />
+                    </a>
+                </div>
+                <div class="block">
+                    <img src="" alt="" width="214" height="29" /><br/>
+                    <p class="red_text">It is necessary to conduct a good deal of research on the Internet before applying for such jobs. 
+                        There are a wide range of career possibilities at diffrent levels of the sector, right from exploration of oil feilds to it field.
+                        You can find information about vacancies in the sector by through our websites.
+                    </p>
+                    <a href="http://www.jobseekersadvice.com/" class="more">
+                        <img src="" alt="" width="105" height="27"/>
+                    </a>
+                </div>
+                <div class="block">
+                    <img src="" alt="" width="214" height="29" /><br>
+                    <ul id="list">
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=Accounts#page=Searchpage-1">Account,Finance</a></li>
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=Automobiles#page=Searchpage-1">Automobiles</a></li>
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=Banking,%20Fiancial%20Services#page=Searchpage-1">Banking</a></li>
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=BPO,%20KPO#page=Searchpage-1">BPO,KPO</a></li>
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=IT,%20Software%20Services#page=Searchpage-1">IT, Software Services</a></li>
+                        <li><a href="http://www.jobsvario.com/ByCategorySubmit.php?Category=Others#page=Searchpage-1">Others</a></li>
+                    </ul>
+                    <a href="http://jobguides.blogspot.com/p/list-of-top-jobs-articles-2011.html" class="more">
+                        <img src="" alt="" width="106" height="27"/>
+                    </a>
+                </div>
+                <div class="block">
+                    <img src="" alt="" width="214" height="29"/><br>
+                    <p class="gray_text">
+                        Enter the world of jobs, Simply enter your e-mail address and click the submit button. <br><br><br><br>
+                    </p>
+                    <form name="myForm">
+                        <center>
+                            <input type="text" onclick="ClearText()" value="Enter Your E-mail ID" size="20" name="MyValue" />
+                        </center>
+                        <br><br>
+                        <center>
+                            <input type="button" onclick="nextpage()" value="Submit" size="20" />
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="inner_copy">
+                <a href="http://www.beautifullife.info/">Beautiful</a>
+                <a href="http://www.grungemagzine.com/">Grunge</a>
+            </div>
+        </div>
+    </body>
+</html>

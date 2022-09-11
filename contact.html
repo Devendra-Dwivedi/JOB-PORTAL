@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Contact Us!
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <script type="text/javascript">
+            function validateForm(){
+                var x=document.forms["userqueryform"]["username"].value
+                if(x==null || x==""){
+                    alert("Please enter you name: ");
+                    return false;
+                }
+                var e=document.forms["userqueryform"]["username"].value
+                var atpos=e.indexOf("@");
+                var dotpos=e.lastIndexOf(".");
+                if(atpos<1 || dotpos<atpos+2 || dotpos>=e.length){
+                    alert("Not a valid email address");
+                    return false;
+                }
+                var x=document.forms["userqueryform"]["userquerydata"].value
+                if(x==null || x==""){
+                    alert("Please enter you query: ");
+                    return false;
+                }
+            }
+            function getURLParam(strParamName){
+                var strReturn="";
+                var strHref=window.location.href;
+                if(strHref.indexOf("?">-1)){
+                    var strQueryString = strHref.substr(strHref.indexOf("?")).toLowerCase();
+                    var aQueryString=strQueryString.split("&");
+                    for(var iParam=0; iParam<aQueryString.length; iParam++){
+                            if(aQueryString[iParam].indexOf(strParamName.toLowerCase()+"=")>-1){
+                                var aParam = aQueryString[iParam].split("=");
+                                strReturn = aParam[1];
+                                break;
+                            }
+                    }
+                }
+                return unescape(strReturn);
+            }
+        </script>
+    </head>
+    <body onload="document.forms.userqueryform.JCode.value=getURLParam('id')">
+        <div class="meta">
+            <div class="metalinks">
+                <a href="index.html"><img src="" title="Home" width="20%" height="30"/></a>
+                <a href="search.html"><img src="" title="Search" width="25%" height="30"/></a>
+                <a href="sitemap.html"><img src="" title="Sitemap" width="27%" height="30"/></a>
+                <a href="contact.html"><img src="" title="Contact" width="25%" height="30"/></a>
+            </div>
+            <p>
+                Recruiters: <a href="reclogin.asp">Recruiters Login</a>
+            </p>
+            <div class="inner_copy">
+                <a href="http://www.greatdirectories.org/">Web Directories</a>
+                <a href="http://www.bestfreetemplates.info/">Free CSS Templates</a>             
+            </div>
+        </div>
+        <div id="header">
+            <a href="index.html" class="logo">
+                <img src="" alt="setalpm" width="149" height="28"/>
+            </a>
+            <span class="slogan">Your Key to Success</span>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobseekerlogin.asp">jobseeker Login</a></li>
+                <li><a href="career.html">Our Career</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li class="last"><a href="registration.htm"><font color="red">Register</font></a></li>
+            </ul>
+            <img src="C:\Users\devdw\Documents\Project\brgame_screenshot (3).jpg" alt="" width="100%" height="600"/>
+        </div>
+        <div id="contact">
+            <form name="userqueryform" onsubmit="return validateForm()" method="post" action="adduserquery.asp">
+                <p align="center">
+                    <hr>
+                    <p align="center">
+                        <b>
+                            <font size="6">&nbsp;&nbsp;&nbsp;
+                                <u>
+                                    <font face="Times New Roman">
+                                        Contact Us!
+                                    </font>
+                                </u>
+                            </font>
+                        </b>
+                        <font face="Times New Roman">&nbsp;&nbsp;</font>
+                        <p align="center">&nbsp;</p><hr><p align="center">&nbsp;</p>
+                        <p align="center"><b><font size="5" face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b>
+                            <font size="5" face="Times New Roman">
+                                <input type="text" name="usermail" size="20">
+                            </font>
+                        </p>
+                        <p align="center">&nbsp;
+                            <p align="center"><b><font size="5" face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Job Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b>
+                            <font size="5" face="Times New Roman">
+                                <input type="text" name="JCode" size="20">&nbsp;&nbsp;
+                            </font>
+                            </p>&nbsp;
+                            &nbsp;<p align="center"><b><font size="5" face="Times New Roman">Your Query:</font></b></p>
+                            &nbsp;<p align="center"><font size="5" face="Times New Roman"><textarea name="userquerydata" cols="50" rows="10"></textarea></font></p>
+                            <p align="center"><font size="5" face="Times New Roman">
+                                <input type="submit" value="Submit" name="B1">&nbsp;&nbsp;
+                                <input type="reset" value="Reset" name="B2">
+                            </font></p>
+            </form>
+            <br><br>
+        </div>        
+    </body>
+</html>
